@@ -1,11 +1,8 @@
 import { Text, TouchableHighlight, View, StyleSheet } from "react-native";
-/**
- * 
- * @param {{bgColor:string,color:string}} props 
- * @returns 
- */
-const Button = (props) => {
-  console.log(props);
+
+
+const Button = ({text, onPress,bgColor='tomato', color='yellow'}) => {
+  //console.log(props);
   /**
    * gestion press du button
    * @param evt {GestureResponderEvent} event
@@ -13,17 +10,31 @@ const Button = (props) => {
    *
    */
   function onButtonPress(evt) {
-    console.log(evt);
-    alert("Titre", "message");
+    onPress();
   }
   return (
     <TouchableHighlight onPress={onButtonPress}>
-      <View style={[style.Touchable, { backgroundColor: props.bgColor }]}>
-        <Text style={[style.Text, { color: props.color }]}>DEMAT BREIZH</Text>
+      <View style={[style.Touchable, { backgroundColor: bgColor }]}>
+        <Text style={[style.Text, { color: color }]}>{text}</Text>
       </View>
     </TouchableHighlight>
   );
 };
+// Button.defaultProps={
+//     bgColor:'tomato',
+//     color:"yellow"
+// }
+// Button.propTypes ={
+//     bgColor:PropTypes.string.isRequired,
+//     color: PropTypes.string.isRequired,
+//     o: PropTypes.shape({
+//       e: PropTypes.number.isRequired,
+//       x: PropTypes.shape({
+//         a: PropTypes.string.isRequired
+//       }).isRequired
+//     }).isRequired
+//     //{e:4,x:{a:"s"}
+// }
 
 const style = StyleSheet.create({
   Touchable: {
