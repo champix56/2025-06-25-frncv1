@@ -4,7 +4,7 @@ import Button from './components/Button/Button';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Button text="ildhciudhs" color={{bg:"blue"}} tab={[1,2,3]} bool={true} />
+      <Button text="Mon button" bgColor="skyblue" color="white" />
     </View>
   );
 }
