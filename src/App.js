@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import Button from "./components/Button/Button";
 import { useState, useEffect } from "react";
+import FlexL from "./components/FlexL/FlexL";
 
 // export class App extends React.Component{
 //   constructor(props) {
@@ -48,35 +49,47 @@ import { useState, useEffect } from "react";
 // }
 export default function App() {
   const [counter, setCounter] = useState(0);
- 
+
   useEffect(() => {
     //didMount
     setCounter(-1000);
-  }, [])
+  }, []);
   useEffect(() => {
     //didMount+didUpdate
-    console.warn(counter)
+    console.warn(counter);
     return () => {
       //willUnmount
     };
-  }, [counter])
+  }, [counter]);
   return (
     <View style={styles.c1}>
       <Text>Valeur du counter: {counter}</Text>
       <View style={styles.container}>
-        <Button text="-1" bgColor="tomato" color="white" onPress={()=>{
-          setCounter(counter-1);
-          console.trace(counter);
-        }} />
-        <Button text="+1" bgColor="skyblue" color="white" onPress={()=>{
-          setCounter(counter+1);
-          console.trace(counter);
-        }} />
+        <FlexL>
+          {" "}
+          <Button
+            text="-1"
+            bgColor="tomato"
+            color="white"
+            onPress={() => {
+              setCounter(counter - 1);
+              console.trace(counter);
+            }}
+          />
+          <Button
+            text="+1"
+            bgColor="skyblue"
+            color="white"
+            onPress={() => {
+              setCounter(counter + 1);
+              console.trace(counter);
+            }}
+          />
+        </FlexL>
       </View>
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   c1: {
     flex: 1,

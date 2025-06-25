@@ -1,8 +1,14 @@
-import { Text, TouchableHighlight, View} from "react-native";
+import { GestureResponderEvent, Text, TouchableHighlight, View} from "react-native";
 import style from "./Button.styles";
 
+interface IButtonProps{
+  text:string;
+  onPress:Function;
+  bgColor?:'tomato'|'skyblue'|'blue';
+  color? : string;
+}
 
-const Button = ({text, onPress,bgColor='tomato', color='yellow'}) => {
+const Button = ({text, onPress,bgColor='tomato', color='yellow'}:IButtonProps) => {
   //console.log(props);
   /**
    * gestion press du button
@@ -10,7 +16,7 @@ const Button = ({text, onPress,bgColor='tomato', color='yellow'}) => {
    * @returns undefined
    *
    */
-  function onButtonPress(evt) {
+  function onButtonPress(evt:GestureResponderEvent) {
     onPress();
   }
   return (
