@@ -1,4 +1,5 @@
-import { Text, TouchableHighlight, View, StyleSheet } from "react-native";
+import { Text, TouchableHighlight, View} from "react-native";
+import style from "./Button.styles";
 
 
 const Button = ({text, onPress,bgColor='tomato', color='yellow'}) => {
@@ -35,21 +36,5 @@ const Button = ({text, onPress,bgColor='tomato', color='yellow'}) => {
 //     }).isRequired
 //     //{e:4,x:{a:"s"}
 // }
-
-const style = StyleSheet.create({
-  Touchable: {
-    backgroundColor: "blue",
-    marginLeft: 5,
-    marginRight: 5,
-    padding: 7,
-    borderRadius: 7,
-  },
-  Text: {
-    color: "red",
-    fontWeight: "900",
-    fontSize: 12,
-    textAlign: "center",
-  },
-});
 
 export default Button;
