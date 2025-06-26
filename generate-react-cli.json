@@ -11,6 +11,30 @@
       "withTest": true,
       "withStory": true,
       "withLazy": true
+    },
+    "tsrnfcs": {
+      "path": "src/components",
+      "withStyle": true,
+      "withTest": false,
+      "withStory": false,
+      "withLazy": true,
+      "customTemplates":{
+        "component":"templates/genericTSFunction/TemplateName.tsx",
+        "style":"templates/genericTSFunction/TemplateName.styles.js",
+        "lazy": "templates/README.md"
+      }
+    },
+    "tsrnfcs-f": {
+      "path": "src/components/functional",
+      "withStyle": true,
+      "withTest": false,
+      "withStory": false,
+      "withLazy": true,
+      "customTemplates":{
+        "component":"templates/genericTSFunction/TemplateName.tsx",
+        "style":"templates/genericTSFunction/TemplateName.styles.js",
+        "lazy": "templates/README.md"
+      }
     }
   }
 }
