@@ -6,8 +6,6 @@ interface IEditProductProps {
   product: IProduct;
   onProductChange: Function;
 }
-interface IEditProductState {}
-const editProductInitialState = {};
 const EditProduct = (props: IEditProductProps) => {
   useEffect(() => {
     setProduct(props.product);

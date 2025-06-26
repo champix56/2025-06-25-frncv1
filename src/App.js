@@ -1,45 +1,22 @@
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  View,
-  ToastAndroid,
-  Alert,
-} from "react-native";
-import { useState, useEffect } from "react";
-import ProductsLayout from "./components/layout/ProductsLayout/ProductsLayout";
-import ProductInFlexGrid from "./components/ui/Button/ProductInFlexGrid/ProductInFlexGrid";
-import store from './store/store'
-export default function App() {
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    //recuperation des datas rest pour state applicatif
-    store.subscribe(()=>{
-      setProducts(store.getState().ressources.products);
-    })
-  }, []);
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 
+import ListProduits from "./components/functional/ListProduits/ListProduits.stored";
+import { Provider } from "react-redux";
+import store from "./store/store";
+export default function App() {
   return (
-    <SafeAreaView>
-      <View style={styles.container}>
-        <View>
-          <Text style={{ textAlign: "center", fontSize: 30 }}>
-            Liste des produits disponibles
-          </Text>
+    <Provider store={store}>
+      <SafeAreaView>
+        <View style={styles.container}>
+          <View>
+            <Text style={{ textAlign: "center", fontSize: 30 }}>
+              Liste des produits disponibles
+            </Text>
+          </View>
+          <ListProduits />
         </View>
-        <ProductsLayout>
-          {products.map((e, i) => (
-            <ProductInFlexGrid product={e} key={'p'+i} onPress={(p)=>{
-              ToastAndroid.show(`${p.name} : ${p.stock}`, ToastAndroid.SHORT)
-            }}
-            onLongPress={(p)=>{
-              Alert.alert('LongPress', `${p.name} : ${p.stock}`)
-            }}
-             />
-          ))}
-        </ProductsLayout>
-      </View>
-    </SafeAreaView>
+      </SafeAreaView>
+    </Provider>
   );
 }
 const styles = StyleSheet.create({

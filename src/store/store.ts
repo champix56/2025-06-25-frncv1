@@ -2,6 +2,7 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import ressourcesReducer, { add } from "./produits";
 import rcart from "./cart";
 import { loadProducts } from "./asyncCalling";
+// import { loadProducts } from "./asyncCalling";
 
 const r = (state = {}, action: any) => {
   console.log(action);
@@ -21,10 +22,10 @@ const store = configureStore({
 // }})
  //store.dispatch(add({id:-1,description:'',image:'',name:'',prix:1,stock:0}))
 
-// store.subscribe(()=>{
-//     console.log(store.getState());
+store.subscribe(()=>{
+    console.log(store.getState());
 
-// })
+})
 
 // store.dispatch(add({id:1,description:'',image:'',name:'',prix:1,stock:0}))
 
