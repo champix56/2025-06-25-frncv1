@@ -6,19 +6,23 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "restServer":"json-server -p 5679 --host 0.0.0.0 db.json",
+    "reversePort":  "adb reverse tcp:5679 tcp:5679",
+    "rest":"npm run reversePort | npm run restServer"
   },
   "dependencies": {
     "expo": "~53.0.12",
     "expo-status-bar": "~2.2.3",
+    "json-server": "^0.17.4",
     "prop-types": "^15.8.1",
     "react": "19.0.0",
     "react-native": "0.79.4"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
-    "typescript": "~5.8.3",
-    "@types/react": "~19.0.10"
+    "@types/react": "~19.0.10",
+    "typescript": "~5.8.3"
   },
   "private": true
 }
