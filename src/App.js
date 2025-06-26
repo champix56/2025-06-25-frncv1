@@ -14,11 +14,9 @@ export default function App() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     //recuperation des datas rest pour state applicatif
-    fetch(`${process.env.EXPO_PUBLIC_RESTADR}/products`)
-      .then((r) => r.json())
-      .then((arr) =>
-        setProducts([...arr, ...arr, ...arr, ...arr, ...arr, ...arr])
-      );
+    store.subscribe(()=>{
+      setProducts(store.getState().ressources.products);
+    })
   }, []);
 
   return (
