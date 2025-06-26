@@ -3,16 +3,13 @@ import {
   StyleSheet,
   Text,
   View,
-  Image,
-  ScrollView,
   ToastAndroid,
   Alert,
 } from "react-native";
 import { useState, useEffect } from "react";
-import EditProduct from "./components/functional/EditProduct/EditProduct";
 import ProductsLayout from "./components/layout/ProductsLayout/ProductsLayout";
 import ProductInFlexGrid from "./components/ui/Button/ProductInFlexGrid/ProductInFlexGrid";
-
+import store from './store/store'
 export default function App() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
