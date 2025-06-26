@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
-import Button from "./components/Button/Button";
+import Button from "./components/ui/Button/Button";
 import { useState, useEffect } from "react";
-import FlexL from "./components/FlexL/FlexL";
+import FlexL from "./components/layouts/FlexL/FlexL";
 
 // export class App extends React.Component{
 //   constructor(props) {
