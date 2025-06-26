@@ -29,6 +29,7 @@ const store = configureStore({
 // store.dispatch(add({id:1,description:'',image:'',name:'',prix:1,stock:0}))
 
 // store.dispatch(add({id:2,description:'',image:'',name:'',prix:1,stock:0}))
-
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
 store.dispatch(loadProducts());
 export default store;
