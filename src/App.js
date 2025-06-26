@@ -1,6 +1,15 @@
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  ScrollView,
+} from "react-native";
 import { useState, useEffect } from "react";
 import EditProduct from "./components/functional/EditProduct/EditProduct";
+import ProductsLayout from "./components/layout/ProductsLayout/ProductsLayout";
+import ProductInFlexGrid from "./components/ui/Button/ProductInFlexGrid/ProductInFlexGrid";
 
 export default function App() {
   const [products, setProducts] = useState([]);
@@ -8,19 +17,31 @@ export default function App() {
     //recuperation des datas rest pour state applicatif
     fetch(`${process.env.EXPO_PUBLIC_RESTADR}/products`)
       .then((r) => r.json())
-      .then((arr) => setProducts(arr));
+      .then((arr) =>
+        setProducts([...arr, ...arr, ...arr, ...arr, ...arr, ...arr])
+      );
   }, []);
 
   return (
     <SafeAreaView>
       <View style={styles.container}>
         <Text>{JSON.stringify(products[0])}</Text>
-        <EditProduct
+        {/* <EditProduct
           product={undefined === products[0] ? { image: "" } : products[0]}
           onProductChange={(product) => {
             setProducts([product, ...products.slice(1)]);
           }}
-        />
+        />*/}
+        <View>
+          <Text style={{ textAlign: "center", fontSize: 60 }}>
+            Liste des produits disponibles
+          </Text>
+        </View>
+        <ProductsLayout>
+          {products.map((e, i) => (
+            <ProductInFlexGrid product={e} key={'p'+i} />
+          ))}
+        </ProductsLayout>
       </View>
     </SafeAreaView>
   );
