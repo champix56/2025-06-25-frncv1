@@ -5,6 +5,8 @@ import {
   View,
   Image,
   ScrollView,
+  ToastAndroid,
+  Alert,
 } from "react-native";
 import { useState, useEffect } from "react";
 import EditProduct from "./components/functional/EditProduct/EditProduct";
@@ -25,21 +27,20 @@ export default function App() {
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        <Text>{JSON.stringify(products[0])}</Text>
-        {/* <EditProduct
-          product={undefined === products[0] ? { image: "" } : products[0]}
-          onProductChange={(product) => {
-            setProducts([product, ...products.slice(1)]);
-          }}
-        />*/}
         <View>
-          <Text style={{ textAlign: "center", fontSize: 60 }}>
+          <Text style={{ textAlign: "center", fontSize: 30 }}>
             Liste des produits disponibles
           </Text>
         </View>
         <ProductsLayout>
           {products.map((e, i) => (
-            <ProductInFlexGrid product={e} key={'p'+i} />
+            <ProductInFlexGrid product={e} key={'p'+i} onPress={(p)=>{
+              ToastAndroid.show(`${p.name} : ${p.stock}`, ToastAndroid.SHORT)
+            }}
+            onLongPress={(p)=>{
+              Alert.alert('LongPress', `${p.name} : ${p.stock}`)
+            }}
+             />
           ))}
         </ProductsLayout>
       </View>

@@ -1,4 +1,4 @@
-import { ScrollView, } from "react-native";
+import { ScrollView, View, } from "react-native";
 import React, { useEffect, useState } from "react";
 import styles from "./ProductsLayout.styles";
  interface IProductsLayoutProps{
@@ -7,8 +7,10 @@ import styles from "./ProductsLayout.styles";
 const ProductsLayout = (props: IProductsLayoutProps) => {
   
   return (
-    <ScrollView style={styles.ProductsLayout}>
+    <ScrollView style={styles.FlexScrollView}>
+      <View style={styles.container}>
       {props.children}
+      </View>
     </ScrollView>
   );
 };
