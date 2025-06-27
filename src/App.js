@@ -4,11 +4,12 @@ import ListProduits from "./components/functional/ListProduits/ListProduits.stor
 import { Provider } from "react-redux";
 import store from "./store/store";
 import EditProduct from "./components/functional/EditProduct/EditProduct.store";
+import MainPage from "./pages/MainPage/MainPage";
 export default function App() {
   return (
     <Provider store={store}>
       <SafeAreaView>
-        <View style={styles.container}>
+        {/* <View style={styles.container}>
           <View>
             <Text style={{ textAlign: "center", fontSize: 30 }}>
               Liste des produits disponibles
@@ -16,7 +17,8 @@ export default function App() {
           </View>
           <ListProduits />
           <EditProduct/>
-        </View>
+        </View> */}
+        <MainPage/>
       </SafeAreaView>
     </Provider>
   );
