@@ -1,5 +1,5 @@
 import { GestureResponderEvent, Text, TouchableHighlight, View} from "react-native";
-import style from "./Button.styles";
+import styleFile from "./Button.styles";
 
 interface IButtonProps{
   children:React.ReactElement|Array<React.ReactElement>;
@@ -9,7 +9,7 @@ interface IButtonProps{
   style?:{}
 }
 
-const Button = ({children,propStyle, onPress,bgColor='tomato', color='yellow'}:IButtonProps) => {
+const Button = ({children,style, onPress,bgColor='tomato', color='yellow'}:IButtonProps) => {
   //console.log(props);
   /**
    * gestion press du button
@@ -21,8 +21,8 @@ const Button = ({children,propStyle, onPress,bgColor='tomato', color='yellow'}:I
     onPress();
   }
   return (
-    <TouchableHighlight onPress={onButtonPress} style={propStyle}>
-      <View style={[style.Touchable, { backgroundColor: bgColor }]}>
+    <TouchableHighlight onPress={onButtonPress} style={style}>
+      <View style={[styleFile.Touchable, { backgroundColor: bgColor }]}>
         {children}
       </View>
     </TouchableHighlight>
