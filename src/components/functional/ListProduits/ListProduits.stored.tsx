@@ -4,11 +4,13 @@ import ListProduitsUnconnected from "./ListProduits";
 import { add } from "../../../store/produits";
 import IProduct from "../../../interfaces/iProduct";
 import { IConnectedListProductsProps } from "./IListProduits";
-import { select } from "../../../store/currentProduct";
+import { dummyProduct, select } from "../../../store/currentProduct";
+import { useNavigation } from "@react-navigation/native";
 
 const ListProduits = (props: IConnectedListProductsProps) => {
   const productsInStore = useSelector((e: RootState) => e.ressources.products);
   const dispatch: AppDispatch = useDispatch();
+  const nav=useNavigation();
   return (
     <ListProduitsUnconnected
       {...props}
@@ -19,6 +21,7 @@ const ListProduits = (props: IConnectedListProductsProps) => {
       }}
       onProductLongPress={(p)=>{
         dispatch(select(p));
+        nav.navigate('edit');
       }}
     />
   );

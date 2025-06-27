@@ -4,25 +4,16 @@ import ProductsLayout from "../../layout/ProductsLayout/ProductsLayout";
 import IProduct from "../../../interfaces/iProduct";
 import ProductInFlexGrid from "../../ui/Button/ProductInFlexGrid/ProductInFlexGrid";
 import { IConnectedListProductsProps } from "./IListProduits";
-import { dummyProduct } from "../../../store/currentProduct";
 
 interface IListProduitsProps {
   products: Array<IProduct>;
-  addProduct: Function;
+  // addProduct: Function;
   onProductLongPress?: Function;
 }
 type IAssembleProps = IConnectedListProductsProps & IListProduitsProps;
 const ListProduits = (props: IAssembleProps) => {
   return (
     <View>
-      <Button
-        title="Nouveau"
-        onPress={() => {
-          if (undefined !== props.onProductLongPress) {
-            props.onProductLongPress(dummyProduct);
-          }
-        }}
-      />
       <ProductsLayout>
         {props.products.map((e, i) => (
           <ProductInFlexGrid

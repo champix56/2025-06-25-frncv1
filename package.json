@@ -10,10 +10,11 @@
     "restServer": "json-server -p 5679 --host 0.0.0.0 db.json",
     "reversePort": "adb reverse tcp:5679 tcp:5679",
     "rest": "npm run reversePort | npm run restServer",
-    "gencomp":"npx generate-react-cli c --type=tsrnfcs",
-    "gencomp:layout":"npx generate-react-cli c --type=tsrnfcs-l"
+    "gencomp": "npx generate-react-cli c --type=tsrnfcs",
+    "gencomp:layout": "npx generate-react-cli c --type=tsrnfcs-l"
   },
   "dependencies": {
+    "@react-navigation/elements": "^2.5.2",
     "@react-navigation/native": "^7.1.14",
     "@react-navigation/native-stack": "^7.3.21",
     "@reduxjs/toolkit": "^2.8.2",

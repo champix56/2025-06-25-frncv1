@@ -3,7 +3,6 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   FlexScrollView: {
     padding: 10,
-    height:350
   },
   container: {
     display: "flex",
@@ -11,6 +10,7 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     gap: 10,
     justifyContent: "space-evenly",
+    paddingBottom:20
   },
 });
 

@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
     borderColor: "grey",
     borderWidth: 1,
     // width: "45%",
-    height: 200,
     alignItems: "center",
     alignContent: "center",
     borderRadius: 8,
