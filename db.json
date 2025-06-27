@@ -1,12 +1,12 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Coca cola 1.5L",
-      "prix": 2,
-      "image": "https://allopizza88.fr/wp-content/uploads/2019/03/coca-cola-maxi-600x600.png",
       "description": "dfjklkjhgfghjklm",
-      "stock": 0
+      "image": "https://allopizza88.fr/wp-content/uploads/2019/03/coca-cola-maxi-600x600.png",
+      "name": "Coca cola 2L",
+      "prix": 2,
+      "stock": 0,
+      "id": 1
     },
     {
       "id": 2,
@@ -71,6 +71,14 @@
       "description": "dfjklkjhgfghjklm",
       "stock": 0,
       "id": 9
+    },
+    {
+      "description": "",
+      "image": "",
+      "name": "nouveau",
+      "prix": 100,
+      "stock": 1,
+      "id": 10
     }
   ]
 }

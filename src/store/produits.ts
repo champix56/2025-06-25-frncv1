@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import IProduct from "../interfaces/iProduct";
-import { loadProducts } from "./asyncCalling";
-interface IProductsSliceState{
-    products:Array<IProduct>
+import { loadProducts, saveProductToServer } from "./asyncCalling";
+interface IProductsSliceState {
+  products: Array<IProduct>;
 }
-const initialState:IProductsSliceState = {
+const initialState: IProductsSliceState = {
   products: [],
 };
 
@@ -25,11 +25,27 @@ const produits = createSlice({
     },
   },
   extraReducers(builder) {
-      builder.addCase(loadProducts.fulfilled,(s,action:{type:string,payload?:Array<IProduct>})=>{
-        console.log('%c%s','color:red;font-size:30pt','extraReducer');
+    builder.addCase(
+      loadProducts.fulfilled,
+      (s, action: { type: string; payload?: Array<IProduct> }) => {
+        console.log("%c%s", "color:red;font-size:30pt", "extraReducer");
         console.log(action);
         s.products.push(...action.payload);
-      })
+      }
+    );
+    builder.addCase(
+      saveProductToServer.fulfilled,
+      (s, action: { type: string; payload: IProduct }) => {
+            const position=s.products.findIndex(p=>p.id===action.payload.id)
+            if(position>=0){
+                s.products[position]=action.payload;
+            }
+            else{
+                s.products.push(action.payload);
+            }
+
+      }
+    );
   },
 });
 

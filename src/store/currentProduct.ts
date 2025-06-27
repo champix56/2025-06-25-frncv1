@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import IProduct from "../interfaces/iProduct";
+import { saveProductToServer } from "./asyncCalling";
 
 export const dummyProduct: IProduct = {
   description: "",
@@ -19,9 +20,18 @@ const currentProduct = createSlice({
       Object.assign(s, action.payload);
     },
     select: (s, action: { type: string; payload: IProduct }) => {
+      delete s.id;
+      Object.assign(s, action.payload);
+    },
+  },
+  extraReducers(builder) {
+    builder.addCase(
+      saveProductToServer.fulfilled,
+      (s, action: { type: string; payload: IProduct }) => {
         delete s.id;
         Object.assign(s, action.payload);
-    },
+      }
+    );
   },
 });
 
