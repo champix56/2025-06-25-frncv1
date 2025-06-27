@@ -9,7 +9,9 @@
     "web": "expo start --web",
     "restServer": "json-server -p 5679 --host 0.0.0.0 db.json",
     "reversePort": "adb reverse tcp:5679 tcp:5679",
-    "rest": "npm run reversePort | npm run restServer"
+    "rest": "npm run reversePort | npm run restServer",
+    "gencomp":"npx generate-react-cli c --type=tsrnfcs",
+    "gencomp:layout":"npx generate-react-cli c --type=tsrnfcs-l"
   },
   "dependencies": {
     "@react-navigation/native": "^7.1.14",
