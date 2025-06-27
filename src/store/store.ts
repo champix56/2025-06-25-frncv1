@@ -3,13 +3,13 @@ import ressourcesReducer from "./produits";
 import rcart from "./cart";
 import { loadProducts } from "./asyncCalling";
 // import { loadProducts } from "./asyncCalling";
-
+import currentReducer from './currentProduct'
 const r = (state = {}, action: any) => {
   console.log(action);
   return state;
 };
 const store = configureStore({
-  reducer: { ressources: ressourcesReducer, vide: r ,cart :rcart},
+  reducer: { ressources: ressourcesReducer,current:currentReducer},
 });
 
 // store.dispatch({type:'ressources/add', payload:{

@@ -42,6 +42,12 @@ const EditProduct = (props: IEditProductProps) => {
   }
   return (
     <View style={styles.EditProduct}>
+       <Button
+        title="Enregistrer"
+        onPress={() => {
+          props.onProductChange(product);
+        }}
+      />
       <Text>Image du produit</Text>
       <Image
         style={styles.image}
@@ -89,12 +95,7 @@ const EditProduct = (props: IEditProductProps) => {
         keyboardType={Platform.OS==="ios"?"name-phone-pad":"decimal-pad"}
       />
       <Button title="Annuler" />
-      <Button
-        title="Enregistrer"
-        onPress={() => {
-          props.onProductChange(product);
-        }}
-      />
+     
       {Platform.OS==='ios'&&<Text>IOS</Text>}
       <Text>{JSON.stringify(product)}</Text>
     </View>

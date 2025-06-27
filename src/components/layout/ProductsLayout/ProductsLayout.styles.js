@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   FlexScrollView: {
     padding: 10,
+    height:350
   },
   container: {
     display: "flex",

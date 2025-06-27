@@ -4,10 +4,12 @@ import ProductsLayout from "../../layout/ProductsLayout/ProductsLayout";
 import IProduct from "../../../interfaces/iProduct";
 import ProductInFlexGrid from "../../ui/Button/ProductInFlexGrid/ProductInFlexGrid";
 import { IConnectedListProductsProps } from "./IListProduits";
+import { dummyProduct } from "../../../store/currentProduct";
 
 interface IListProduitsProps {
   products: Array<IProduct>;
   addProduct: Function;
+  onProductLongPress?: Function;
 }
 type IAssembleProps = IConnectedListProductsProps & IListProduitsProps;
 const ListProduits = (props: IAssembleProps) => {
@@ -16,14 +18,9 @@ const ListProduits = (props: IAssembleProps) => {
       <Button
         title="Nouveau"
         onPress={() => {
-          props.addProduct({
-            id: -1,
-            name: "",
-            description: "",
-            prix: 0,
-            stock: 0,
-            image: "",
-          });
+          if (undefined !== props.onProductLongPress) {
+            props.onProductLongPress(dummyProduct);
+          }
         }}
       />
       <ProductsLayout>
@@ -35,7 +32,10 @@ const ListProduits = (props: IAssembleProps) => {
               ToastAndroid.show(`${p.name} : ${p.stock}`, ToastAndroid.SHORT);
             }}
             onLongPress={(p) => {
-              Alert.alert("LongPress", `${p.name} : ${p.stock}`);
+              if (undefined !== props.onProductLongPress) {
+                props.onProductLongPress(p);
+              }
+              Alert.alert("Edition de ", `${p.name} : ${p.stock}`);
             }}
           />
         ))}

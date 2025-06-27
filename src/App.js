@@ -3,6 +3,7 @@ import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import ListProduits from "./components/functional/ListProduits/ListProduits.stored";
 import { Provider } from "react-redux";
 import store from "./store/store";
+import EditProduct from "./components/functional/EditProduct/EditProduct.store";
 export default function App() {
   return (
     <Provider store={store}>
@@ -14,6 +15,7 @@ export default function App() {
             </Text>
           </View>
           <ListProduits />
+          <EditProduct/>
         </View>
       </SafeAreaView>
     </Provider>
