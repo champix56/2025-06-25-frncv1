@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../../store/store";
 import ListProduitsUnconnected from "./ListProduits";
 import { add } from "../../../store/produits";
-import IProduct from "../../../interfaces/iproduct";
+import IProduct from "../../../interfaces/iProduct";
 import { IConnectedListProductsProps } from "./IListProduits";
 
 const ListProduits = (props: IConnectedListProductsProps) => {

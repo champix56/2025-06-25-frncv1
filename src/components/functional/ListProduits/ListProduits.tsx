@@ -1,7 +1,7 @@
 import { Alert, ToastAndroid, View, Button } from "react-native";
 import React from "react";
 import ProductsLayout from "../../layout/ProductsLayout/ProductsLayout";
-import IProduct from "../../../interfaces/iproduct";
+import IProduct from "../../../interfaces/iProduct";
 import ProductInFlexGrid from "../../ui/Button/ProductInFlexGrid/ProductInFlexGrid";
 import { IConnectedListProductsProps } from "./IListProduits";
 

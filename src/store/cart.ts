@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import IProduct from "../interfaces/iproduct";
+import IProduct from "../interfaces/iProduct";
 import { loadProducts } from "./asyncCalling";
 interface IProductsSliceState{
     cart:Array<IProduct>

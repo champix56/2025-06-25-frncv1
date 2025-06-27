@@ -1,7 +1,7 @@
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import styles from "./ProductInFlexGrid.styles";
-import IProduct from "../../../../interfaces/iproduct";
+import IProduct from "../../../../interfaces/iProduct";
 
 interface IProductInFlexGridProps {
   product: IProduct;

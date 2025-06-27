@@ -1,7 +1,7 @@
 import { Button, Image, Platform, Switch, Text, TextInput, View } from "react-native";
 import React, { useEffect, useState } from "react";
 import styles from "./EditProduct.styles";
-import IProduct from "../../../interfaces/iproduct";
+import IProduct from "../../../interfaces/iProduct";
 interface IEditProductProps {
   product: IProduct;
   onProductChange: Function;
