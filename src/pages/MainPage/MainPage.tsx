@@ -11,13 +11,13 @@ const MainPage = (props: IMainPageProps) => {
       <Text style={styles.titre}>Mon stock v1.0</Text>
       <Image source={{uri:'https://energynews.pro/wp-content/uploads/2023/10/entrepot-logistique.png'}} style={styles.image} />
       <View style={styles.buttonContainer}>
-        <Button style={{width:'35%', padding:2}} onPress={() => {}}>
+        <Button  style={styles.Button}onPress={() => {}}>
           <View style={styles.buttonView}>
             <Image source={{uri:'https://www.cartonsdedemenagement.com/carton-livres,CCLI10.png'}} style={styles.buttonImage} />
             <Text style={styles.buttonText}>Nouveau</Text>
           </View>
         </Button>
-        <Button bgColor="skyblue" style={{width:'35%', padding:2}} onPress={() => {}}>
+        <Button bgColor="skyblue" style={styles.Button} onPress={() => {}}>
           <View style={styles.buttonView}>
             <Image source={{uri:'https://www.urbanhub.fr/wp-content/uploads/2020/07/entrepot-logistique-Paris-Urbanhub-photo-2.png'}} style={styles.buttonImage} />
             <Text style={styles.buttonText}>Liste</Text>
